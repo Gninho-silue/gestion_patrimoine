@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_type_unite_tree" model="ir.ui.view">
+        <field name="name">gestion.patrimoine.type.unite.tree</field>
+        <field name="model">gestion.patrimoine.type.unite</field>
+        <field name="arch" type="xml">
+            <tree string="Types d'Unités" editable="bottom">
+                <field name="libelle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_type_unite_form" model="ir.ui.view">
+        <field name="name">gestion.patrimoine.type.unite.form</field>
+        <field name="model">gestion.patrimoine.type.unite</field>
+        <field name="arch" type="xml">
+            <form string="Type d'Unité">
+                <sheet>
+                    <group>
+                        <field name="libelle"/>
+                    </group>
+                    <notebook>
+                        <page string="Unités">
+                            <field name="unite_ids">
+                                <tree>
+                                    <field name="code"/>
+                                    <field name="designation"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_type_unite" model="ir.actions.act_window">
+        <field name="name">Types d'Unités</field>
+        <field name="res_model">gestion.patrimoine.type.unite</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

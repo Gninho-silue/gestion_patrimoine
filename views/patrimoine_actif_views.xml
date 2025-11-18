@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_patrimoine_actif_form" model="ir.ui.view">
+        <field name="name">gestion.patrimoine.actif.form</field>
+        <field name="model">gestion.patrimoine.actif</field>
+        <field name="arch" type="xml">
+            <form string="Patrimoine Actif">
+                <sheet>
+                    <field name="image_actif" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="code" placeholder="Code..."/>
+                        </h1>
+                        <field name="designation" placeholder="Désignation..."/>
+                    </div>
+                    <group>
+                        <group string="Informations Générales">
+                            <field name="type_patrimoine_id"/>
+                            <field name="categorie_id"/>
+                            <field name="famille_id"/>
+                            <field name="sous_famille_id"/>
+                            <field name="marque_id"/>
+                            <field name="degre_importance"/>
+                        </group>
+                        <group string="Informations Financières">
+                            <field name="valeur_acquisition"/>
+                            <field name="date_acquisition"/>
+                            <field name="date_mise_service"/>
+                            <field name="fournisseur_id"/>
+                            <field name="n_bc"/>
+                            <field name="n_bl"/>
+                            <field name="n_facture"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Localisation">
+                            <field name="patrimoine_geographique_id"/>
+                            <field name="unite_id"/>
+                        </group>
+                        <group string="État">
+                            <field name="etat_id"/>
+                            <field name="etat_actuelle"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Consignes de Sécurité">
+                            <field name="consigne_securite" placeholder="Saisir les consignes de sécurité..."/>
+                        </page>
+                        <page string="Historique des États">
+                            <field name="etat_patrimoine_actif_ids">
+                                <tree editable="bottom">
+                                    <field name="date_etat"/>
+                                    <field name="etat_id"/>
+                                    <field name="commentaire"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_patrimoine_actif_tree" model="ir.ui.view">
+        <field name="name">gestion.patrimoine.actif.tree</field>
+        <field name="model">gestion.patrimoine.actif</field>
+        <field name="arch" type="xml">
+            <tree string="Patrimoines Actifs">
+                <field name="code"/>
+                <field name="designation"/>
+                <field name="categorie_id"/>
+                <field name="valeur_acquisition"/>
+                <field name="etat_id"/>
+                <field name="unite_id"/>
+                <field name="degre_importance"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_patrimoine_actif_search" model="ir.ui.view">
+        <field name="name">gestion.patrimoine.actif.search</field>
+        <field name="model">gestion.patrimoine.actif</field>
+        <field name="arch" type="xml">
+            <search string="Rechercher Patrimoines">
+                <field name="code"/>
+                <field name="designation"/>
+                <field name="categorie_id"/>
+                <field name="famille_id"/>
+                <field name="marque_id"/>
+                <filter string="Critique" name="critique" domain="[('degre_importance', '=', 'critique')]"/>
+                <filter string="Élevé" name="eleve" domain="[('degre_importance', '=', 'eleve')]"/>
+                <group expand="0" string="Grouper par">
+                    <filter string="Catégorie" name="group_categorie" context="{'group_by': 'categorie_id'}"/>
+                    <filter string="Famille" name="group_famille" context="{'group_by': 'famille_id'}"/>
+                    <filter string="État" name="group_etat" context="{'group_by': 'etat_id'}"/>
+                    <filter string="Unité" name="group_unite" context="{'group_by': 'unite_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_patrimoine_actif_kanban" model="ir.ui.view">
+        <field name="name">gestion.patrimoine.actif.kanban</field>
+        <field name="model">gestion.patrimoine.actif</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="degre_importance">
+                <field name="code"/>
+                <field name="designation"/>
+                <field name="valeur_acquisition"/>
+                <field name="etat_id"/>
+                <field name="image_actif"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('gestion.patrimoine.actif', 'image_actif', record.id.raw_value)"
+                                     alt="Patrimoine"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong>
+                                    <field name="code"/>
+                                </strong>
+                                <br/>
+                                <field name="designation"/>
+                                <br/>
+                                <field name="valeur_acquisition"/>
+                                DH
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_patrimoine_actif" model="ir.actions.act_window">
+        <field name="name">Patrimoines Actifs</field>
+        <field name="res_model">gestion.patrimoine.actif</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- TYPE PATRIMOINE -->
+    <record id="view_type_patrimoine_tree" model="ir.ui.view">
+        <field name="name">type.patrimoine.tree</field>
+        <field name="model">gestion.patrimoine.type.patrimoine</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="libelle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_type_patrimoine" model="ir.actions.act_window">
+        <field name="name">Types de Patrimoine</field>
+        <field name="res_model">gestion.patrimoine.type.patrimoine</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- CATÉGORIE PERSONNEL -->
+    <record id="view_categorie_personnel_tree" model="ir.ui.view">
+        <field name="name">categorie.personnel.tree</field>
+        <field name="model">gestion.patrimoine.categorie.personnel</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="libelle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_categorie_personnel" model="ir.actions.act_window">
+        <field name="name">Catégories de Personnel</field>
+        <field name="res_model">gestion.patrimoine.categorie.personnel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- CATÉGORIE PATRIMOINE ACTIF -->
+    <record id="view_categorie_patrim_actif_tree" model="ir.ui.view">
+        <field name="name">categorie.patrim.actif.tree</field>
+        <field name="model">gestion.patrimoine.categorie.patrim.actif</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="libelle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_categorie_patrim_actif" model="ir.actions.act_window">
+        <field name="name">Catégories de Patrimoine</field>
+        <field name="res_model">gestion.patrimoine.categorie.patrim.actif</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- MARQUE -->
+    <record id="view_marque_tree" model="ir.ui.view">
+        <field name="name">marque.tree</field>
+        <field name="model">gestion.patrimoine.marque</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="libelle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_marque" model="ir.actions.act_window">
+        <field name="name">Marques</field>
+        <field name="res_model">gestion.patrimoine.marque</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- FAMILLE -->
+    <record id="view_famille_tree" model="ir.ui.view">
+        <field name="name">famille.tree</field>
+        <field name="model">gestion.patrimoine.famille</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="libelle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_famille" model="ir.actions.act_window">
+        <field name="name">Familles</field>
+        <field name="res_model">gestion.patrimoine.famille</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- SOUS-FAMILLE -->
+    <record id="view_sous_famille_tree" model="ir.ui.view">
+        <field name="name">sous.famille.tree</field>
+        <field name="model">gestion.patrimoine.sous.famille</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="famille_id"/>
+                <field name="libelle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_sous_famille" model="ir.actions.act_window">
+        <field name="name">Sous-Familles</field>
+        <field name="res_model">gestion.patrimoine.sous.famille</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ÉTAT -->
+    <record id="view_etat_tree" model="ir.ui.view">
+        <field name="name">etat.tree</field>
+        <field name="model">gestion.patrimoine.etat</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="libelle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_etat" model="ir.actions.act_window">
+        <field name="name">États</field>
+        <field name="res_model">gestion.patrimoine.etat</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

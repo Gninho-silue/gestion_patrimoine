@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_patrimoine_actif_user,patrimoine.actif.user,model_gestion_patrimoine_actif,base.group_user,1,1,1,1
+access_etat_user,etat.user,model_gestion_patrimoine_etat,base.group_user,1,1,1,1
+access_etat_patrimoine_actif_user,etat.patrimoine.actif.user,model_gestion_patrimoine_etat_patrimoine_actif,base.group_user,1,1,1,1
+access_patrimoine_geographique_user,patrimoine.geographique.user,model_gestion_patrimoine_geographique,base.group_user,1,1,1,1
+access_unite_user,unite.user,model_gestion_patrimoine_unite,base.group_user,1,1,1,1
+access_type_unite_user,type.unite.user,model_gestion_patrimoine_type_unite,base.group_user,1,1,1,1
+access_type_patrimoine_user,type.patrimoine.user,model_gestion_patrimoine_type_patrimoine,base.group_user,1,1,1,1
+access_personnel_user,personnel.user,model_gestion_patrimoine_personnel,base.group_user,1,1,1,1
+access_categorie_personnel_user,categorie.personnel.user,model_gestion_patrimoine_categorie_personnel,base.group_user,1,1,1,1
+access_categorie_patrim_actif_user,categorie.patrim.actif.user,model_gestion_patrimoine_categorie_patrim_actif,base.group_user,1,1,1,1
+access_fournisseur_user,fournisseur.user,model_gestion_patrimoine_fournisseur,base.group_user,1,1,1,1
+access_marque_user,marque.user,model_gestion_patrimoine_marque,base.group_user,1,1,1,1
+access_famille_user,famille.user,model_gestion_patrimoine_famille,base.group_user,1,1,1,1
+access_sous_famille_user,sous.famille.user,model_gestion_patrimoine_sous_famille,base.group_user,1,1,1,1

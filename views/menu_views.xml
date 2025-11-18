@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu Principal -->
+    <menuitem id="menu_gestion_patrimoine_root"
+              name="Gestion Patrimoine"
+              sequence="10"
+              web_icon="gestion_patrimoine,static/description/icon.png"/>
+
+    <!-- Section: Patrimoines -->
+    <menuitem id="menu_patrimoines"
+              name="Patrimoines"
+              parent="menu_gestion_patrimoine_root"
+              sequence="10"/>
+
+    <menuitem id="menu_patrimoine_actif"
+              name="Patrimoines Actifs"
+              parent="menu_patrimoines"
+              action="action_patrimoine_actif"
+              sequence="10"/>
+
+    <menuitem id="menu_etat_patrimoine_actif"
+              name="Historique des États"
+              parent="menu_patrimoines"
+              action="action_etat_patrimoine_actif"
+              sequence="20"/>
+
+    <!-- Section: Ressources -->
+    <menuitem id="menu_ressources"
+              name="Ressources"
+              parent="menu_gestion_patrimoine_root"
+              sequence="20"/>
+
+    <menuitem id="menu_fournisseur"
+              name="Fournisseurs"
+              parent="menu_ressources"
+              action="action_fournisseur"
+              sequence="10"/>
+
+    <menuitem id="menu_personnel"
+              name="Personnel"
+              parent="menu_ressources"
+              action="action_personnel"
+              sequence="20"/>
+
+    <!-- Section: Organisation -->
+    <menuitem id="menu_organisation"
+              name="Organisation"
+              parent="menu_gestion_patrimoine_root"
+              sequence="30"/>
+
+    <menuitem id="menu_unite"
+              name="Unités"
+              parent="menu_organisation"
+              action="action_unite"
+              sequence="10"/>
+
+    <menuitem id="menu_patrimoine_geographique"
+              name="Localisations"
+              parent="menu_organisation"
+              action="action_patrimoine_geographique"
+              sequence="20"/>
+
+    <!-- Section: Configuration -->
+    <menuitem id="menu_configuration"
+              name="Configuration"
+              parent="menu_gestion_patrimoine_root"
+              sequence="100"/>
+
+    <menuitem id="menu_config_classification"
+              name="Classification"
+              parent="menu_configuration"
+              sequence="10"/>
+
+    <menuitem id="menu_type_patrimoine"
+              name="Types de Patrimoine"
+              parent="menu_config_classification"
+              action="action_type_patrimoine"
+              sequence="10"/>
+
+    <menuitem id="menu_categorie_patrim_actif"
+              name="Catégories"
+              parent="menu_config_classification"
+              action="action_categorie_patrim_actif"
+              sequence="20"/>
+
+    <menuitem id="menu_famille"
+              name="Familles"
+              parent="menu_config_classification"
+              action="action_famille"
+              sequence="30"/>
+
+    <menuitem id="menu_sous_famille"
+              name="Sous-Familles"
+              parent="menu_config_classification"
+              action="action_sous_famille"
+              sequence="40"/>
+
+    <menuitem id="menu_marque"
+              name="Marques"
+              parent="menu_config_classification"
+              action="action_marque"
+              sequence="50"/>
+
+    <menuitem id="menu_config_autres"
+              name="Autres"
+              parent="menu_configuration"
+              sequence="20"/>
+
+    <menuitem id="menu_etat"
+              name="États"
+              parent="menu_config_autres"
+              action="action_etat"
+              sequence="10"/>
+
+    <menuitem id="menu_type_unite"
+              name="Types d'Unités"
+              parent="menu_config_autres"
+              action="action_type_unite"
+              sequence="20"/>
+
+    <menuitem id="menu_categorie_personnel"
+              name="Catégories de Personnel"
+              parent="menu_config_autres"
+              action="action_categorie_personnel"
+              sequence="30"/>
+</odoo>
