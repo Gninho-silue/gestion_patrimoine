@@ -326,4 +326,4 @@ _sql_constraints = [
 
 ---
 
-**Module développé pour Odoo 17 - Compatible et testé** 🎉
+**Module développé par SILUE avecOdoo 17 - Compatible et testé** 
